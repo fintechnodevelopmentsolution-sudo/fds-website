@@ -45,13 +45,17 @@ button {
 }
 
 .site-shell {
+     background-color: var(--paper);
+     background-image: linear-gradient(115deg, rgba(7, 91, 216, .035) 1px, transparent 1px), linear-gradient(25deg, rgba(22, 166, 239, .035) 1px, transparent 1px);
+     background-size: 58px 58px, 92px 92px;
      overflow: hidden
 }
 
 .page-loader {
      align-items: center;
-     background: var(--ink);
-     color: white;
+     backdrop-filter: blur(12px);
+     background: rgba(247, 251, 255, .78);
+     color: var(--ink);
      display: flex;
      flex-direction: column;
      inset: 0;
@@ -68,13 +72,24 @@ button {
      letter-spacing: .03em
 }
 
+.loader-logo {
+     animation: logo-breathe 1.5s ease-in-out infinite;
+     background: white;
+     border: 4px solid white;
+     border-radius: 50%;
+     box-shadow: 0 12px 35px rgba(7, 28, 58, .15);
+     height: 132px;
+     object-fit: cover;
+     width: 132px
+}
+
 .loader-brand .brand-mark {
      background: var(--blue);
      color: white
 }
 
 .loader-line {
-     background: rgba(255, 255, 255, .2);
+     background: rgba(7, 28, 58, .14);
      height: 2px;
      margin-top: 28px;
      overflow: hidden;
@@ -91,7 +106,7 @@ button {
 }
 
 .page-loader p {
-     color: rgba(255, 255, 255, .55);
+     color: var(--muted);
      font-family: 'DM Mono', monospace;
      font-size: 9px;
      letter-spacing: .15em;
@@ -139,6 +154,13 @@ button {
      letter-spacing: .04em
 }
 
+.brand-logo {
+     display: block;
+     height: 68px;
+     object-fit: contain;
+     width: 190px
+}
+
 .brand-mark {
      align-items: center;
      background: var(--ink);
@@ -175,6 +197,7 @@ button {
 .nav-cta,
 .submit-button {
      background: var(--ink);
+     border-radius: 999px;
      color: var(--paper);
      font-size: 12px;
      font-weight: 700;
@@ -437,13 +460,15 @@ h2 em {
 .service-cards {
      display: grid;
      gap: 20px;
-     grid-template-columns: repeat(3, 1fr)
+     grid-template-columns: repeat(4, 1fr)
 }
 
 .service-card {
      background: white;
      border: 1px solid var(--line);
+     border-radius: 22px;
      box-shadow: 0 16px 40px rgba(7, 28, 58, .06);
+     overflow: hidden;
      transition: box-shadow .35s ease, transform .35s ease
 }
 
@@ -597,6 +622,46 @@ h2 em {
      padding-top: 150px
 }
 
+.friendly-note {
+     color: var(--muted);
+     font-size: 14px;
+     line-height: 1.7;
+     margin: 30px 0 32px;
+     max-width: 390px
+}
+
+.social-links {
+     border-top: 1px solid var(--line);
+     max-width: 430px
+}
+
+.social-links a {
+     align-items: center;
+     border-bottom: 1px solid var(--line);
+     display: flex;
+     font-size: 12px;
+     justify-content: space-between;
+     padding: 14px 0;
+     transition: color .2s, padding .2s
+}
+
+.social-links a:hover {
+     color: var(--blue);
+     padding-left: 8px;
+     padding-right: 8px
+}
+
+.social-links span {
+     color: var(--muted);
+     font-family: 'DM Mono', monospace;
+     font-size: 10px;
+     text-transform: uppercase
+}
+
+.social-links strong {
+     font-weight: 700
+}
+
 .contact-form {
      max-width: 410px;
      padding-top: 5px
@@ -688,6 +753,12 @@ h2 em {
 
 .footer-meta a {
      color: var(--ink)
+}
+
+@media(max-width:1100px) {
+     .service-cards {
+          grid-template-columns: repeat(2, 1fr)
+     }
 }
 
 @media(max-width:760px) {
@@ -817,5 +888,17 @@ h2 em {
           flex-wrap: wrap;
           gap: 14px 20px;
           margin-top: 35px
+     }
+}
+
+@keyframes logo-breathe {
+
+     0%,
+     100% {
+          transform: scale(.96) rotate(-2deg)
+     }
+
+     50% {
+          transform: scale(1) rotate(2deg)
      }
 }
