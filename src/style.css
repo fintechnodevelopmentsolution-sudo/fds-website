@@ -142,7 +142,7 @@ button {
      border-bottom: 1px solid var(--line);
      display: flex;
      justify-content: space-between;
-     padding: 21px clamp(24px, 7vw, 112px)
+     padding: 21px clamp(24px, 7vw, 112px) 21px 0
 }
 
 .brand {
@@ -229,6 +229,41 @@ button {
      max-width: 650px;
      position: relative;
      z-index: 1
+}
+
+.hero-brand {
+     align-items: center;
+     display: flex;
+     gap: 14px;
+     margin-bottom: 34px
+}
+
+.hero-brand img {
+     border: 2px solid white;
+     border-radius: 50%;
+     box-shadow: 0 8px 20px rgba(7, 28, 58, .12);
+     height: 58px;
+     object-fit: cover;
+     width: 58px
+}
+
+.hero-brand div {
+     display: flex;
+     flex-direction: column;
+     gap: 4px
+}
+
+.hero-brand strong {
+     color: var(--blue);
+     font-size: 15px;
+     letter-spacing: .1em
+}
+
+.hero-brand span {
+     color: var(--muted);
+     font-family: 'DM Mono', monospace;
+     font-size: 10px;
+     letter-spacing: .03em
 }
 
 .eyebrow {
@@ -729,29 +764,83 @@ h2 em {
 }
 
 .footer {
-     align-items: end;
+     align-items: start;
      border-top: 1px solid var(--line);
-     display: flex;
-     justify-content: space-between;
+     display: grid;
+     gap: 45px 30px;
+     grid-template-columns: 1.4fr repeat(3, 1fr);
      padding-bottom: 35px;
      padding-top: 35px
 }
 
-.footer p {
+.footer-intro p {
      color: var(--muted);
      font-size: 11px;
      margin: 15px 0 0
 }
 
-.footer-meta {
+.footer-location,
+.footer-label {
+     color: var(--muted);
+     font-family: 'DM Mono', monospace;
+     font-size: 9px;
+     letter-spacing: .08em;
+     text-transform: uppercase
+}
+
+.footer-location {
+     display: block;
+     margin-top: 28px
+}
+
+.footer-label {
+     margin: 6px 0 18px
+}
+
+.footer-column ul {
+     list-style: none;
+     margin: 0;
+     padding: 0
+}
+
+.footer-column li,
+.footer-contact a {
+     font-size: 11px;
+     line-height: 1.5;
+     margin-bottom: 12px
+}
+
+.footer-column a {
+     transition: color .2s
+}
+
+.footer-column a:hover {
+     color: var(--blue)
+}
+
+.footer-contact {
+     display: flex;
+     flex-direction: column
+}
+
+.footer-contact .owner-label {
+     margin-top: 20px
+}
+
+.footer-bottom {
+     border-top: 1px solid var(--line);
      color: var(--muted);
      display: flex;
      font-family: 'DM Mono', monospace;
      font-size: 9px;
-     gap: 25px
+     grid-column: 1 / -1;
+     justify-content: space-between;
+     letter-spacing: .05em;
+     padding-top: 20px;
+     text-transform: uppercase
 }
 
-.footer-meta a {
+.footer a {
      color: var(--ink)
 }
 
@@ -806,7 +895,9 @@ h2 em {
 
      .nav-cta {
           margin-top: 8px;
-          text-align: left
+          align-self: center;
+          padding: 13px 20px;
+          text-align: center
      }
 
      .hero {
@@ -818,6 +909,19 @@ h2 em {
 
      .hero h1 {
           font-size: clamp(70px, 21vw, 120px)
+     }
+
+     .hero-brand {
+          margin-bottom: 28px
+     }
+
+     .hero-brand img {
+          height: 48px;
+          width: 48px
+     }
+
+     .hero-brand span {
+          font-size: 9px
      }
 
      .hero-visual {
@@ -884,10 +988,42 @@ h2 em {
           display: block
      }
 
-     .footer-meta {
-          flex-wrap: wrap;
-          gap: 14px 20px;
-          margin-top: 35px
+     .topbar .brand-logo {
+          height: 58px;
+          width: 158px
+     }
+
+     .footer-intro,
+     .footer-column,
+     .footer-contact {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          text-align: center
+     }
+
+     .footer-column ul {
+          width: 100%
+     }
+
+     .footer-column li,
+     .footer-contact a {
+          margin-bottom: 14px
+     }
+
+     .footer-label {
+          margin-top: 24px
+     }
+
+     .footer-bottom {
+          border-top: 1px solid var(--line);
+          display: grid;
+          gap: 16px 20px;
+          grid-template-columns: 1fr;
+          justify-items: center;
+          margin-top: 28px;
+          padding-top: 24px;
+          width: 100%
      }
 }
 
